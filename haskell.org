@@ -1,0 +1,36 @@
+#+TITLE: haskell
+* Chapter 04 pigs cant fly
+** Exercise: Mood Swings
+#+BEGIN_SRC haskell :session none :results output
+data Mood = Blah | Woot deriving Show
+changeMood :: Mood -> Mood
+changeMood Blah = Woot
+changeMood Woot = Blah
+changeMood Blah
+changeMood Woot
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+
+<interactive>:101:1-10: error:
+    • Couldn't match type ‘Ghci68.Mood’
+                     with ‘Mood’
+      NB: ‘Mood’ is defined at <interactive>:100:1-37
+          ‘Ghci68.Mood’ is defined at <interactive>:93:1-37
+      Expected type: Mood -> Mood
+        Actual type: Ghci68.Mood -> Ghci68.Mood
+    • In the expression: changeMood :: Mood -> Mood
+      In an equation for ‘it’: it = changeMood :: Mood -> Mood
+Prelude> Prelude> *** Exception: <interactive>:103:1-22: Non-exhaustive patterns in function changeMood
+#+end_example
+** Numeric types
+*** Integral numbers
+**** Int
+**** Integer
+*** Fractional
+**** Float
+**** Double
+**** Rational
+**** Scientific
+***
